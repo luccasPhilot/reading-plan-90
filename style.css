@@ -1,0 +1,114 @@
+/* Estilos gerais */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    /* Aumentei um pouco a largura para acomodar as colunas */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.reading-number {
+    font-weight: bold;
+    color: #adb5bd;
+    /* Um cinza sutil */
+    min-width: 25px;
+    /* Garante alinhamento para números com 1, 2 ou 3 dígitos */
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+#reading-plan-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Cria duas colunas de largura igual */
+    gap: 12px 20px;
+    /* Espaçamento entre as linhas e colunas */
+}
+
+/* Estilos do item da lista */
+.reading-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    /* Troquei a borda inferior por uma borda completa para um visual de "card" */
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+/* ---------------------------------- */
+
+.reading-item:hover {
+    background-color: #fafafa;
+}
+
+/* Estilo para item concluído */
+.reading-item.completed {
+    background-color: #f8f9f9;
+}
+
+.reading-item.completed .reading-text,
+.reading-item.completed .reading-day {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.reading-day {
+    font-weight: bold;
+    color: #3498db;
+    min-width: 60px;
+}
+
+.reading-text {
+    flex-grow: 1;
+    margin: 0 10px;
+    font-size: 0.95em;
+}
+
+/* Estilo do checkbox */
+.checkbox {
+    transform: scale(1.4);
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* BÔNUS: Responsividade para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    #reading-plan-container {
+        grid-template-columns: 1fr;
+        /* Volta a ter 1 coluna em telas menores */
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
