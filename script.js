@@ -93,8 +93,139 @@ document.addEventListener("DOMContentLoaded", () => {
     { day: "02/11", chapters: "Apocalipse 21-22" },
   ];
 
+  const bibleBooksData = [
+    // Antigo Testamento
+    { name: "Gênesis", author: "Moisés", category: "Pentateuco" },
+    { name: "Êxodo", author: "Moisés", category: "Pentateuco" },
+    { name: "Levítico", author: "Moisés", category: "Pentateuco" },
+    { name: "Números", author: "Moisés", category: "Pentateuco" },
+    { name: "Deuteronômio", author: "Moisés", category: "Pentateuco" },
+    { name: "Josué", author: "Josué", category: "Históricos" },
+    {
+      name: "Juízes",
+      author: "Samuel (tradicionalmente)",
+      category: "Históricos",
+    },
+    {
+      name: "Rute",
+      author: "Samuel (tradicionalmente)",
+      category: "Históricos",
+    },
+    { name: "1 Samuel", author: "Samuel, Gade, Natã", category: "Históricos" },
+    { name: "2 Samuel", author: "Gade, Natã", category: "Históricos" },
+    {
+      name: "1 Reis",
+      author: "Jeremias (tradicionalmente)",
+      category: "Históricos",
+    },
+    {
+      name: "2 Reis",
+      author: "Jeremias (tradicionalmente)",
+      category: "Históricos",
+    },
+    {
+      name: "1 Crônicas",
+      author: "Esdras (tradicionalmente)",
+      category: "Históricos",
+    },
+    {
+      name: "2 Crônicas",
+      author: "Esdras (tradicionalmente)",
+      category: "Históricos",
+    },
+    { name: "Esdras", author: "Esdras", category: "Históricos" },
+    { name: "Neemias", author: "Neemias", category: "Históricos" },
+    { name: "Ester", author: "Desconhecido", category: "Históricos" },
+    {
+      name: "Jó",
+      author: "Desconhecido (possivelmente Moisés ou Jó)",
+      category: "Poéticos e de Sabedoria",
+    },
+    {
+      name: "Salmos",
+      author: "Davi, Asafe, filhos de Corá, outros",
+      category: "Poéticos e de Sabedoria",
+    },
+    {
+      name: "Provérbios",
+      author: "Salomão, Agur, Lemuel",
+      category: "Poéticos e de Sabedoria",
+    },
+    {
+      name: "Eclesiastes",
+      author: "Salomão",
+      category: "Poéticos e de Sabedoria",
+    },
+    {
+      name: "Cânticos dos Cânticos",
+      author: "Salomão",
+      category: "Poéticos e de Sabedoria",
+    },
+    { name: "Isaías", author: "Isaías", category: "Profetas Maiores" },
+    { name: "Jeremias", author: "Jeremias", category: "Profetas Maiores" },
+    { name: "Lamentações", author: "Jeremias", category: "Profetas Maiores" },
+    { name: "Ezequiel", author: "Ezequiel", category: "Profetas Maiores" },
+    { name: "Daniel", author: "Daniel", category: "Profetas Maiores" },
+    { name: "Oséias", author: "Oséias", category: "Profetas Menores" },
+    { name: "Joel", author: "Joel", category: "Profetas Menores" },
+    { name: "Amós", author: "Amós", category: "Profetas Menores" },
+    { name: "Obadias", author: "Obadias", category: "Profetas Menores" },
+    { name: "Jonas", author: "Jonas", category: "Profetas Menores" },
+    { name: "Miquéias", author: "Miquéias", category: "Profetas Menores" },
+    { name: "Naum", author: "Naum", category: "Profetas Menores" },
+    { name: "Habacuque", author: "Habacuque", category: "Profetas Menores" },
+    { name: "Sofonias", author: "Sofonias", category: "Profetas Menores" },
+    { name: "Ageu", author: "Ageu", category: "Profetas Menores" },
+    { name: "Zacarias", author: "Zacarias", category: "Profetas Menores" },
+    { name: "Malaquias", author: "Malaquias", category: "Profetas Menores" },
+    // Novo Testamento
+    { name: "Mateus", author: "Mateus", category: "Evangelhos" },
+    { name: "Marcos", author: "Marcos", category: "Evangelhos" },
+    { name: "Lucas", author: "Lucas", category: "Evangelhos" },
+    { name: "João", author: "João", category: "Evangelhos" },
+    { name: "Atos dos Apóstolos", author: "Lucas", category: "Histórico (NT)" },
+    { name: "Romanos", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "1 Coríntios", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "2 Coríntios", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "Gálatas", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "Efésios", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "Filipenses", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "Colossenses", author: "Paulo", category: "Epístolas Paulinas" },
+    {
+      name: "1 Tessalonicenses",
+      author: "Paulo",
+      category: "Epístolas Paulinas",
+    },
+    {
+      name: "2 Tessalonicenses",
+      author: "Paulo",
+      category: "Epístolas Paulinas",
+    },
+    { name: "1 Timóteo", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "2 Timóteo", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "Tito", author: "Paulo", category: "Epístolas Paulinas" },
+    { name: "Filemom", author: "Paulo", category: "Epístolas Paulinas" },
+    {
+      name: "Hebreus",
+      author: "Desconhecido (tradicionalmente Paulo)",
+      category: "Epístolas Gerais",
+    },
+    { name: "Tiago", author: "Tiago", category: "Epístolas Gerais" },
+    { name: "1 Pedro", author: "Pedro", category: "Epístolas Gerais" },
+    { name: "2 Pedro", author: "Pedro", category: "Epístolas Gerais" },
+    { name: "1 João", author: "João", category: "Epístolas Gerais" },
+    { name: "2 João", author: "João", category: "Epístolas Gerais" },
+    { name: "3 João", author: "João", category: "Epístolas Gerais" },
+    { name: "Judas", author: "Judas", category: "Epístolas Gerais" },
+    { name: "Apocalipse", author: "João", category: "Profético (NT)" },
+  ];
+
   const container = document.getElementById("reading-plan-container");
   const STORAGE_KEY = "readingProgress";
+  const modal = document.getElementById("books-modal");
+  const showBooksBtn = document.getElementById("show-books-btn");
+  const closeBtn = document.querySelector(".close-btn");
+  const booksListContainer = document.getElementById("books-list-container");
 
   // Carrega o progresso salvo no localStorage
   function loadProgress() {
@@ -157,7 +288,67 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function renderBooksList() {
+    // Agrupa os livros por categoria
+    const groupedBooks = bibleBooksData.reduce((acc, book) => {
+      const category = book.category;
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(book);
+      return acc;
+    }, {});
+
+    booksListContainer.innerHTML = ""; // Limpa o container
+
+    // Cria o HTML para cada categoria e seus livros
+    for (const category in groupedBooks) {
+      const categoryDiv = document.createElement("div");
+      categoryDiv.classList.add("category-group");
+
+      const title = document.createElement("h3");
+      title.classList.add("category-title");
+      title.textContent = category;
+      categoryDiv.appendChild(title);
+
+      groupedBooks[category].forEach((book) => {
+        const bookDiv = document.createElement("div");
+        bookDiv.classList.add("book-item");
+
+        const nameSpan = document.createElement("span");
+        nameSpan.classList.add("book-name");
+        nameSpan.textContent = book.name;
+
+        const authorSpan = document.createElement("span");
+        authorSpan.classList.add("book-author");
+        authorSpan.textContent = book.author;
+
+        bookDiv.appendChild(nameSpan);
+        bookDiv.appendChild(authorSpan);
+        categoryDiv.appendChild(bookDiv);
+      });
+
+      booksListContainer.appendChild(categoryDiv);
+    }
+  }
+
+  // Eventos para controlar o modal
+  showBooksBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+
   // Inicia o processo
   renderPlan();
+  renderBooksList();
   loadProgress();
 });
